@@ -55,7 +55,7 @@
 // 21 = Elefu Ra Board (v3)
 
 #ifndef MOTHERBOARD
-#define MOTHERBOARD 35
+#define MOTHERBOARD 77
 #endif
 
 // Define this to set a custom name for your generic Mendel,
@@ -202,9 +202,9 @@
 
 // If you are using a preconfigured hotend then you can use one of the value sets by uncommenting it
 // Ultimaker
-    #define  DEFAULT_Kp 22.2
-    #define  DEFAULT_Ki 1.08
-    #define  DEFAULT_Kd 114
+//    #define  DEFAULT_Kp 22.2
+//    #define  DEFAULT_Ki 1.08
+//    #define  DEFAULT_Kd 114
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
@@ -212,9 +212,9 @@
 //    #define  DEFAULT_Kd 12
 
 // Mendel Parts V9 on 12V
-//    #define  DEFAULT_Kp 63.0
-//    #define  DEFAULT_Ki 2.25
-//    #define  DEFAULT_Kd 440
+    #define  DEFAULT_Kp 63.0
+    #define  DEFAULT_Ki 2.25
+    #define  DEFAULT_Kd 440
 #endif // PIDTEMP
 
 // Bed Temperature Control
@@ -324,7 +324,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define Z_AXIS_IS_LEADSCREW
 
 #define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
+#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR false     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR false    // for direct drive extruder v9 set to true, for geared extruder set to false
@@ -393,12 +393,22 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 //#define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for r retracts
 
 // Lansing Makers Netowork Laser Cutter
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {157.4802,157.4802,6047.2440}  // default steps per unit for Ultimaker
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {157.4802,157.4802,6047.2440}  // default steps per unit for Ultimaker
+//#define DEFAULT_MAX_FEEDRATE          {7600, 7600, 10, 25}    // (mm/sec)
+//#define DEFAULT_MAX_ACCELERATION      {2600,2600,2.5,2.5}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+
+//#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
+//#define DEFAULT_RETRACT_ACCELERATION  2000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
+
+// K40 laser with 3drag board and X axis stepper sobstitution
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7401,157.4802,6047.2440}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {7600, 7600, 10, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {2600,2600,2.5,2.5}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          2000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  2000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
+
+
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
