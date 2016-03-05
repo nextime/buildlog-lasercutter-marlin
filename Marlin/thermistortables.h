@@ -564,6 +564,32 @@ const short temptable_10[][2] PROGMEM = {
 };
 #endif
 
+#if (THERMISTORHEATER_0 == 40) || (THERMISTORHEATER_1 == 40) || (THERMISTORHEATER_2 == 40) || (THERMISTORBED == 40)
+// 10k Carel NTC015WH01 or ELIWELL SN8T6A1502 (4.7k pullup)
+// roughly calculated using datasheet ( 10k at 25 celsius ), my body temp ( 35.9 celsius, 6.66k ) and my freezer ( -21 celsius, 55.4k )
+const short temptable_9[][2] PROGMEM = {
+    {1*OVERSAMPLENR, 161}, // v=0.005 r=4.931  res=4.868 degC/count
+    {4*OVERSAMPLENR, 151}, // v=0.018 r=17.031 res=2.401 degC/count
+    {9*OVERSAMPLENR, 141}, // v=0.044 r=42.161 res=1.335 degC/count
+    {19*OVERSAMPLENR, 131}, // v=0.091 r=87.118 res=0.808 degC/count
+    {34*OVERSAMPLENR, 121}, // v=0.166 r=161.548   res=0.521 degC/count
+    {57*OVERSAMPLENR, 111}, // v=0.280 r=279.093   res=0.353 degC/count
+    {91*OVERSAMPLENR, 101}, // v=0.445 r=459.006   res=0.251 degC/count
+    {137*OVERSAMPLENR, 91}, // v=0.671 r=728.467   res=0.187 degC/count
+    {198*OVERSAMPLENR, 81}, // v=0.966 r=1125.904  res=0.147 degC/count
+    {273*OVERSAMPLENR, 71}, // v=1.331 r=1705.793  res=0.123 degC/count
+    {360*OVERSAMPLENR, 61}, // v=1.757 r=2545.658  res=0.109 degC/count
+    {455*OVERSAMPLENR, 51}, // v=2.221 r=3756.346  res=0.103 degC/count
+    {552*OVERSAMPLENR, 41}, // v=2.695 r=5497.273  res=0.104 degC/count
+    {645*OVERSAMPLENR, 31}, // v=3.149 r=7999.244  res=0.112 degC/count
+    {729*OVERSAMPLENR, 21}, // v=3.558 r=11599.028 res=0.129 degC/count
+    {800*OVERSAMPLENR, 11}, // v=3.907 r=16792.321 res=0.155 degC/count
+    {858*OVERSAMPLENR,  1}, // v=4.190 r=24315.959 res=0.194 degC/count
+    {862*OVERSAMPLENR,  0}  
+};
+#endif
+
+
 #if (THERMISTORHEATER_0 == 51) || (THERMISTORHEATER_1 == 51) || (THERMISTORHEATER_2 == 51) || (THERMISTORBED == 51)
 // 100k EPCOS (WITH 1kohm RESISTOR FOR PULLUP, R9 ON SANGUINOLOLU! NOT FOR 4.7kohm PULLUP! THIS IS NOT NORMAL!)
 // Verified by linagee.
