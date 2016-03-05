@@ -567,7 +567,7 @@ const short temptable_10[][2] PROGMEM = {
 #if (THERMISTORHEATER_0 == 40) || (THERMISTORHEATER_1 == 40) || (THERMISTORHEATER_2 == 40) || (THERMISTORBED == 40)
 // 10k Carel NTC015WH01 or ELIWELL SN8T6A1502 (4.7k pullup)
 // roughly calculated using datasheet ( 10k at 25 celsius ), my body temp ( 35.9 celsius, 6.66k ) and my freezer ( -21 celsius, 56k )
-const short temptable_9[][2] PROGMEM = {
+const short temptable_40[][2] PROGMEM = {
     {1*OVERSAMPLENR, 170 }, // v=0.005 r=4.779  res=6.413 degC/count
     {2*OVERSAMPLENR, 165 }, // v=0.009 r=8.149  res=4.650 degC/count
     {3*OVERSAMPLENR, 160 }, // v=0.014 r=13.175 res=3.412 degC/count

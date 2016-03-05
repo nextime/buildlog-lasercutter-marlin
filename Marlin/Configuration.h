@@ -86,6 +86,9 @@
 // Uncomment the following if your laser firing pin (not the PWM pin) for two pin control requires a HIGH signal to fire rather than a low (eg Red Sail M300 RS 3040)
 /// #define HIGH_TO_FIRE
 
+// Uncomment the following to enable the use of the PWM (the one for the extruder 0) to drive a peltier cell or any PWM driven cooler for the laser
+#define LASER_WATER_COOLING
+
 //// The following defines select which G codes tell the laser to fire.  It's OK to uncomment more than one.
 #define LASER_FIRE_G1 10 // fire the laser on a G1 move, extinguish when the move ends
 #define LASER_FIRE_SPINDLE 11 // fire the laser on M3, extinguish on M5
@@ -140,6 +143,7 @@
 // 8 is 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup)
 // 9 is 100k GE Sensing AL03006-58.2K-97-G1 (4.7k pullup)
 // 10 is 100k RS thermistor 198-961 (4.7k pullup)
+// 40 is 10k NTC thermocouple from carel (4.7k pullup) ( it can goes up only to 150 celsius! ) 
 // 60 is 100k Maker's Tool Works Kapton Bed Thermister
 //
 //    1k ohm pullup tables - This is not normal, you would have to have changed out your 4.7k for 1k
@@ -151,7 +155,7 @@
 
 // changes made in ULTRA_LCD_IMPLEMENTATION_HITACHI_HD44780.H line 473 to allow temperature display 
 // instead of Z position, set to 1 for temperature, 0 for no temperature.
-#define TEMP_SENSOR_0 0
+#define TEMP_SENSOR_0 40
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 0
