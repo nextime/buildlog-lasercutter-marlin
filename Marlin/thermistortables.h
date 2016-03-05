@@ -566,26 +566,43 @@ const short temptable_10[][2] PROGMEM = {
 
 #if (THERMISTORHEATER_0 == 40) || (THERMISTORHEATER_1 == 40) || (THERMISTORHEATER_2 == 40) || (THERMISTORBED == 40)
 // 10k Carel NTC015WH01 or ELIWELL SN8T6A1502 (4.7k pullup)
-// roughly calculated using datasheet ( 10k at 25 celsius ), my body temp ( 35.9 celsius, 6.66k ) and my freezer ( -21 celsius, 55.4k )
+// roughly calculated using datasheet ( 10k at 25 celsius ), my body temp ( 35.9 celsius, 6.66k ) and my freezer ( -21 celsius, 56k )
 const short temptable_9[][2] PROGMEM = {
-    {1*OVERSAMPLENR, 161}, // v=0.005 r=4.931  res=4.868 degC/count
-    {4*OVERSAMPLENR, 151}, // v=0.018 r=17.031 res=2.401 degC/count
-    {9*OVERSAMPLENR, 141}, // v=0.044 r=42.161 res=1.335 degC/count
-    {19*OVERSAMPLENR, 131}, // v=0.091 r=87.118 res=0.808 degC/count
-    {34*OVERSAMPLENR, 121}, // v=0.166 r=161.548   res=0.521 degC/count
-    {57*OVERSAMPLENR, 111}, // v=0.280 r=279.093   res=0.353 degC/count
-    {91*OVERSAMPLENR, 101}, // v=0.445 r=459.006   res=0.251 degC/count
-    {137*OVERSAMPLENR, 91}, // v=0.671 r=728.467   res=0.187 degC/count
-    {198*OVERSAMPLENR, 81}, // v=0.966 r=1125.904  res=0.147 degC/count
-    {273*OVERSAMPLENR, 71}, // v=1.331 r=1705.793  res=0.123 degC/count
-    {360*OVERSAMPLENR, 61}, // v=1.757 r=2545.658  res=0.109 degC/count
-    {455*OVERSAMPLENR, 51}, // v=2.221 r=3756.346  res=0.103 degC/count
-    {552*OVERSAMPLENR, 41}, // v=2.695 r=5497.273  res=0.104 degC/count
-    {645*OVERSAMPLENR, 31}, // v=3.149 r=7999.244  res=0.112 degC/count
-    {729*OVERSAMPLENR, 21}, // v=3.558 r=11599.028 res=0.129 degC/count
-    {800*OVERSAMPLENR, 11}, // v=3.907 r=16792.321 res=0.155 degC/count
-    {858*OVERSAMPLENR,  1}, // v=4.190 r=24315.959 res=0.194 degC/count
-    {862*OVERSAMPLENR,  0}  
+    {1*OVERSAMPLENR, 170 }, // v=0.005 r=4.779  res=6.413 degC/count
+    {2*OVERSAMPLENR, 165 }, // v=0.009 r=8.149  res=4.650 degC/count
+    {3*OVERSAMPLENR, 160 }, // v=0.014 r=13.175 res=3.412 degC/count
+    {4*OVERSAMPLENR, 155 }, // v=0.022 r=20.330 res=2.545 degC/count
+    {6*OVERSAMPLENR, 150 }, // v=0.032 r=30.171 res=1.930 degC/count
+    {9*OVERSAMPLENR, 145 }, // v=0.046 r=43.355 res=1.487 degC/count
+    {13*OVERSAMPLENR, 140 }, // v=0.064 r=60.667 res=1.163 degC/count
+    {18*OVERSAMPLENR, 135 }, // v=0.087 r=83.039 res=0.921 degC/count
+    {24*OVERSAMPLENR, 130 }, // v=0.116 r=111.581   res=0.738 degC/count
+    {31*OVERSAMPLENR, 125 }, // v=0.152 r=147.613   res=0.599 degC/count
+    {40*OVERSAMPLENR, 120 }, // v=0.197 r=192.707   res=0.490 degC/count
+    {51*OVERSAMPLENR, 115 }, // v=0.251 r=248.732   res=0.406 degC/count
+    {65*OVERSAMPLENR, 110 }, // v=0.317 r=317.912   res=0.339 degC/count
+    {81*OVERSAMPLENR, 105 }, // v=0.395 r=402.891   res=0.287 degC/count
+    {100*OVERSAMPLENR, 100 }, // v=0.487 r=506.820   res=0.245 degC/count
+    {122*OVERSAMPLENR,  95 }, // v=0.594 r=633.445   res=0.211 degC/count
+    {147*OVERSAMPLENR,  90 }, // v=0.717 r=787.233   res=0.185 degC/count
+    {176*OVERSAMPLENR,  85 }, // v=0.858 r=973.507   res=0.163 degC/count
+    {208*OVERSAMPLENR,  80 }, // v=1.016 r=1198.616  res=0.146 degC/count
+    {244*OVERSAMPLENR,  75 }, // v=1.191 r=1470.144  res=0.133 degC/count
+    {283*OVERSAMPLENR,  70 }, // v=1.383 r=1797.155  res=0.122 degC/count
+    {325*OVERSAMPLENR,  65 }, // v=1.590 r=2190.498  res=0.114 degC/count
+    {370*OVERSAMPLENR,  60 }, // v=1.808 r=2663.173  res=0.109 degC/count
+    {417*OVERSAMPLENR,  55 }, // v=2.037 r=3230.783  res=0.105 degC/count
+    {465*OVERSAMPLENR,  50 }, // v=2.271 r=3912.078  res=0.103 degC/count
+    {514*OVERSAMPLENR,  45 }, // v=2.508 r=4729.634  res=0.103 degC/count
+    {562*OVERSAMPLENR,  40 }, // v=2.743 r=5710.679  res=0.105 degC/count
+    {609*OVERSAMPLENR,  35 }, // v=2.972 r=6888.113  res=0.108 degC/count
+    {654*OVERSAMPLENR,  30 }, // v=3.193 r=8301.773  res=0.114 degC/count
+    {697*OVERSAMPLENR,  25 }, // v=3.401 r=10000.000 res=0.121 degC/count
+    {737*OVERSAMPLENR,  20 }, // v=3.596 r=12041.586 res=0.130 degC/count
+    {773*OVERSAMPLENR,  15 }, // v=3.776 r=14498.209 res=0.142 degC/count
+    {807*OVERSAMPLENR,  10 }, // v=3.939 r=17457.483 res=0.157 degC/count
+    {837*OVERSAMPLENR,   5 }, // v=4.087 r=21026.791 res=0.176 degC/count
+    {864*OVERSAMPLENR,   0 }  // v=4.218 r=25338.118 res=0.199 degC/count
 };
 #endif
 
